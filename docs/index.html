@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#080e18">
+  <meta name="description" content="Haptic Cursor makes macOS interface boundaries tangible with customizable Force Touch trackpad feedback. Explore the interactive demo, features, open-source code and installer.">
+  <meta property="og:title" content="Haptic Cursor — Feel the interface">
+  <meta property="og:description" content="An open-source macOS experiment in Accessibility-aware haptics. Custom profiles, control-by-control feedback, and no pointer modification.">
+  <meta property="og:image" content="assets/app-icon.png">
+  <title>Haptic Cursor — macOS trackpad haptic profiles</title>
+  <link rel="icon" href="assets/app-icon.png" type="image/png">
+  <link rel="stylesheet" href="styles.css">
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <div class="gridlight" aria-hidden="true"></div>
+  <header class="site-header">
+    <div class="nav-shell">
+      <a href="#top" class="brand" aria-label="Haptic Cursor home"><img src="assets/app-icon.png" alt="" width="40" height="40"><span>haptic<span class="brand-mid">cursor</span><small>MACOS HAPTICS</small></span></a>
+      <nav class="nav-links" aria-label="Main navigation">
+        <a href="#features">Features</a><a href="#playground">Demo</a><a href="#setup">Install</a><a href="#technical">Technical</a>
+      </nav>
+      <a class="nav-git" id="headerSource" href="#source"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 .9a11.1 11.1 0 0 0-3.51 21.63c.55.1.76-.24.76-.54v-2.1c-3.09.67-3.74-1.31-3.74-1.31-.5-1.29-1.23-1.63-1.23-1.63-1.01-.69.08-.68.08-.68 1.12.08 1.71 1.15 1.71 1.15.99 1.7 2.6 1.21 3.23.93.1-.72.39-1.21.7-1.49-2.47-.28-5.07-1.24-5.07-5.49 0-1.21.43-2.19 1.14-2.96-.11-.28-.5-1.42.11-2.95 0 0 .93-.3 3.05 1.13a10.6 10.6 0 0 1 5.56 0c2.12-1.43 3.05-1.13 3.05-1.13.61 1.53.22 2.67.11 2.95.71.77 1.14 1.75 1.14 2.96 0 4.26-2.61 5.21-5.09 5.49.4.35.75 1.04.75 2.09v3.1c0 .3.2.65.77.54A11.1 11.1 0 0 0 12 .9Z"/></svg><span>Source</span></a>
+    </div>
+  </header>
+  <main id="top">
+    <section class="hero wrap">
+      <div class="hero-content">
+        <div class="eyebrow"><span class="pulse-dot"></span> OPEN SOURCE · MACOS · V3.0.1 DEVELOPER PREVIEW</div>
+        <h1>Feel the<br><span>interface.</span></h1>
+        <p class="hero-intro">Every button has a boundary. Now it can have a feeling. Add subtle trackpad haptics to the controls you move across—without clicking, highlighting or changing the cursor.</p>
+        <div class="hero-actions"><a class="btn primary" href="downloads/MenuMagnetHapticProfiles-v3.0.1.zip" download>Download source + installer <span aria-hidden="true">↗</span></a><a class="btn secondary" href="#playground">Try the visual demo <span aria-hidden="true">↓</span></a></div>
+        <div class="hero-foot"><span><i class="tick"></i> One snap per control</span><span><i class="tick"></i> Custom profiles</span><span><i class="tick"></i> No cursor modification</span></div>
+      </div>
+      <div class="hero-art" aria-label="Haptic Cursor app icon surrounded by visualized haptic waves">
+        <div class="orbit orbit-outer"></div><div class="orbit orbit-middle"></div><div class="orbit orbit-inner"></div><div class="hero-shadow"></div>
+        <img src="assets/app-icon.png" class="large-icon" alt="Haptic Cursor icon with cursor and cyan haptic rings">
+        <div class="float-label label-top"><b>AXButton</b><small>Boundary detected</small><span class="active-pin"></span></div>
+        <div class="float-label label-bottom"><span class="wave-sign">≋</span><div><b>HAPTIC / LEVEL 1</b><small>Single entry snap</small></div></div>
+      </div>
+    </section>
+    <div class="thin-rule"></div>
+    <section class="features wrap section" id="features">
+      <div class="section-kicker">01 / THE IDEA</div><div class="section-heading"><h2>A tactile layer.<br>Nothing else changes.</h2><p>Haptic Cursor watches Accessibility boundaries and gives you feedback at entry. Its entire purpose is to make the existing interface easier to feel.</p></div>
+      <div class="feature-grid">
+        <article class="feature"><span class="feature-icon">◎</span><h3>Invisible boundaries</h3><p>Detect supported macOS Accessibility elements as the pointer enters their bounds.</p></article>
+        <article class="feature"><span class="feature-icon">⌁</span><h3>One clean haptic</h3><p>A single feedback request per entry. No repeated pulses, snapping or inertial movement.</p></article>
+        <article class="feature"><span class="feature-icon">▦</span><h3>Profiles for everything</h3><p>Save named presets, disable all feedback, or customize each UI role individually.</p></article>
+        <article class="feature"><span class="feature-icon">◫</span><h3>Finder + Dock aware</h3><p>Best-effort support for file items, Dock icons, scrollbars, menu items and controls.</p></article>
+        <article class="feature"><span class="feature-icon">◈</span><h3>Configurable patterns</h3><p>Choose Apple's Alignment, Generic or Level Change feedback for each type of control.</p></article>
+        <article class="feature"><span class="feature-icon">⟡</span><h3>Experimental strength</h3><p>Optional private hardware waveforms for Levels 1–4. Standard mode remains available.</p></article>
+      </div>
+    </section>
+    <section id="playground" class="demo-section section">
+      <div class="wrap">
+        <div class="section-kicker">02 / HANDS-ON</div><div class="section-heading"><h2>Explore the boundaries.</h2><p>Hover or tap a control in this simulated desktop to see its Accessibility role and configured haptic response. No browser can reproduce the Mac trackpad's physical feedback.</p></div>
+        <div class="playground-grid">
+          <div class="simulation">
+            <div class="sim-header"><span class="sim-status"><span class="tiny-pulse"></span> LIVE VISUAL SIMULATION</span><span class="sim-clock">Haptic Cursor • demo</span></div>
+            <div class="mock-window">
+              <div class="window-top"><div class="window-dots"><i></i><i></i><i></i></div><span>Finder / Example window</span><span class="window-layout">▤ ▦</span></div>
+              <div class="toolbar"><button type="button" class="ax-control toolbar-btn" data-role="AXButton" data-label="Back button" title="Back">←</button><button type="button" class="ax-control toolbar-btn" data-role="AXButton" data-label="Forward button" title="Forward">→</button><span class="tool-divider"></span><button type="button" class="ax-control toolbar-btn" data-role="AXPopUpButton" data-label="View options">▦ <small>View</small></button><div class="toolbar-space"></div><button type="button" class="ax-control toolbar-btn" data-role="AXSearchField" data-label="Search control">⌕ <small>Search</small></button></div>
+              <div class="finder-content"><div class="finder-side"><div class="sidebar-label">FAVOURITES</div><button class="ax-control side-item" type="button" data-role="AXRow" data-label="Recents sidebar item"><span>◷</span> Recents</button><button class="ax-control side-item current" type="button" data-role="AXRow" data-label="Documents sidebar item"><span>▤</span> Documents</button><button class="ax-control side-item" type="button" data-role="AXRow" data-label="Downloads sidebar item"><span>⇩</span> Downloads</button><div class="sidebar-label second">LOCATIONS</div><button type="button" class="ax-control side-item" data-role="AXRow" data-label="Macintosh HD sidebar item"><span>▣</span> Macintosh HD</button></div>
+                <div class="finder-main"><div class="file-header">Desktop examples <span>4 items</span></div><div class="file-grid">
+                  <button class="ax-control file-item" type="button" data-role="FinderItem" data-label="Project folder"><span class="folder folder-blue">▰</span><span>Projects</span></button>
+                  <button class="ax-control file-item" type="button" data-role="FinderItem" data-label="Document"><span class="file-doc">≡</span><span>Notes.md</span></button>
+                  <button class="ax-control file-item" type="button" data-role="FinderItem" data-label="Image file"><span class="file-image">◪</span><span>Artwork.png</span></button>
+                  <button class="ax-control file-item" type="button" data-role="FinderItem" data-label="Downloads folder"><span class="folder folder-teal">▰</span><span>Samples</span></button>
+                </div><div class="controls-band"><button class="ax-control action-btn" data-role="AXButton" data-label="Action button" type="button">Action button</button><label class="ax-control checkbox-sim" data-role="AXCheckBox" data-label="Checkbox"><input type="checkbox" tabindex="-1"> Enable option</label><div class="slider-control ax-control" role="button" tabindex="0" data-role="AXSlider" data-label="Slider"><span class="slider-line"><b></b></span><small>Slider</small></div></div></div>
+                <button class="ax-control scroll-mock" type="button" data-role="AXScrollBar" data-label="Scrollbar track"><span class="scroll-thumb"></span><span class="sr-only">Scrollbar example</span></button>
+              </div>
+            </div>
+            <div class="dock-sim" aria-label="Simulated macOS Dock"><button class="ax-control dock-item" type="button" data-role="AXDockItem" data-label="Finder Dock icon" aria-label="Finder Dock icon">◉</button><button class="ax-control dock-item" type="button" data-role="AXDockItem" data-label="Browser Dock icon" aria-label="Browser Dock icon">◎</button><button class="ax-control dock-item" type="button" data-role="AXDockItem" data-label="Music Dock icon" aria-label="Music Dock icon">♫</button><span class="dock-divider"></span><button class="ax-control dock-item" type="button" data-role="AXDockItem" data-label="Downloads Dock folder" aria-label="Downloads Dock folder">▰</button></div>
+            <p class="simulation-note">Demo is visual only. Hover, focus, or click a control; the website never triggers native trackpad haptics.</p>
+          </div>
+          <aside class="inspector" aria-label="Interactive demo settings">
+            <div class="inspector-top"><div><span class="inspector-eyebrow">HAPTIC INSPECTOR</span><h3>Boundary feedback</h3></div><span class="live-badge">DEMO</span></div>
+            <div class="inspector-controls"><label for="profileSelect">Profile</label><select id="profileSelect"><option value="default">Default · Level 1</option><option value="silent">Silent · Off</option><option value="custom">Custom · Try levels</option></select><div class="two-cols"><div><label for="levelSelect">Feedback level</label><select id="levelSelect"><option value="0">Off</option><option value="1">Level 1</option><option value="2">Level 2</option><option value="3">Level 3</option><option value="4">Level 4</option></select></div><div><label for="patternSelect">Pattern</label><select id="patternSelect"><option>Alignment</option><option>Generic</option><option>Level Change</option></select></div></div><div class="mode-toggle"><span>Enhanced mode preview <small>Illustration only</small></span><button id="enhancedToggle" type="button" aria-pressed="false" aria-label="Toggle enhanced mode illustration" class="switch"><i></i></button></div></div>
+            <div class="readout"><span class="readout-top">LAST CONTROL</span><b id="roleOutput">Move over a control</b><span id="nameOutput">No boundary event yet</span><div class="response-display"><span>FEEDBACK RESPONSE</span><div class="bars" id="responseBars" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></div></div><p id="responseOutput" aria-live="polite">Waiting for an entry event…</p></div>
+            <div class="inspector-bottom"><span>ENTRY EVENTS <strong id="countOutput">00</strong></span><button id="clearButton" type="button">Clear events ↺</button></div>
+          </aside>
+        </div>
+        <p class="demo-note"><strong>About levels:</strong> in Standard mode, macOS uses a fixed feedback pattern regardless of the selected non-Off level. Enhanced Mode's separate hardware waveforms are experimental, undocumented and not necessarily comparable across Mac models.</p>
+      </div>
+    </section>
+    <section id="setup" class="setup section wrap">
+      <div class="section-kicker">03 / GET STARTED</div><div class="section-heading"><h2>Download. Build. Feel.</h2><p>The app is distributed as source with a Terminal installer. It compiles natively on your Mac and requests Accessibility access.</p></div>
+      <div class="setup-grid"><div class="step-card"><span class="step-no">01</span><h3>Download the source</h3><p>Get the current ZIP. Includes Swift code, the macOS icon, tests, and the installer.</p><a class="text-link" href="downloads/MenuMagnetHapticProfiles-v3.0.1.zip" download>Get v3.0.1 ZIP ↗</a></div><div class="step-card"><span class="step-no">02</span><h3>Run the installer</h3><p>Requires Apple Command Line Tools. The script compiles, verifies, installs, and launches the app.</p></div><div class="step-card"><span class="step-no">03</span><h3>Approve and customize</h3><p>Grant macOS Accessibility access. Keep Enhanced Mode off for your first test, then configure saved profiles.</p></div></div>
+      <div class="terminal"><div class="terminal-head"><div class="terminal-dots"><i></i><i></i><i></i></div><span>Terminal · one-command installation</span><button id="copyInstall" type="button">Copy command</button></div><pre id="terminalCode"><code>(
+  set -e
+  ZIP="$HOME/Downloads/MenuMagnetHapticProfiles-v3.0.1.zip"
+  TMP="$(mktemp -d)"
+  trap 'rm -rf "$TMP"' EXIT
+  unzip -q "$ZIP" -d "$TMP"
+  bash "$TMP/MenuMagnetHapticProfiles-v3.0.1/install.sh"
+  rm -f "$ZIP"
+)</code></pre></div>
+      <p class="setup-caution">The installer removes only recognized earlier Menu Magnet application bundles after successfully compiling the replacement. It may request administrator approval for old copies in /Applications and attempts targeted resets of old app permission entries. Review the script before running it.</p>
+    </section>
+    <section class="role-section section" id="technical"><div class="wrap"><div class="section-kicker">04 / UNDER THE HOOD</div><div class="section-heading"><h2>Built on macOS Accessibility.</h2><p>Menus, scrollbars, and controls expose different role tags. Haptic Cursor maps them to user-controlled haptic profiles.</p></div><div class="role-pills"><span>AXButton</span><span>AXCheckBox</span><span>AXSlider</span><span>AXTextField</span><span>AXScrollBar</span><span>AXDockItem</span><span>AXMenuItem</span><span>AXPopUpButton</span><span>FinderItem</span><span>AXLink</span><span>AXTab</span><span>AXRow</span><span>+ more</span></div><div class="architecture"><div class="architecture-node"><span>INPUT</span><b>Pointer position</b><small>Read only</small></div><div class="connector-line"></div><div class="architecture-node"><span>DETECTION</span><b>Accessibility role</b><small>AX element boundary</small></div><div class="connector-line"></div><div class="architecture-node"><span>PROFILE</span><b>Role-specific rule</b><small>Pattern + level</small></div><div class="connector-line"></div><div class="architecture-node"><span>OUTPUT</span><b>Trackpad haptic</b><small>One snap on entry</small></div></div></div></section>
+    <section class="disclaimer wrap section" id="source"><div><span class="section-kicker">05 / OPEN SOURCE</span><h2>Make it yours.</h2><p>Explore the Swift and C implementation, report unexpected Accessibility roles, and contribute fixes. The complete project is MIT licensed.</p><div class="source-buttons"><a class="btn primary" id="sourceLink" href="downloads/MenuMagnetHapticProfiles-v3.0.1.zip">Explore source code ↗</a><a class="btn secondary" href="downloads/MenuMagnetHapticProfiles-v3.0.1.zip" download>Download v3.0.1</a></div></div><div class="release-card"><span class="release-label">DEVELOPER PREVIEW · V3.0.1</span><h3>Experimental by design.</h3><p>The latest source addresses a previously reported crash, but has not yet been independently hardware-tested. Enhanced strength uses an undocumented Apple framework. Standard mode uses Apple's public AppKit haptics.</p><a href="downloads/SHA256SUMS.txt" class="checksum">Verify source ZIP SHA-256 ↗</a></div></section>
+  </main>
+  <footer class="footer"><div class="wrap footer-grid"><div><a class="brand footer-brand" href="#top"><img src="assets/app-icon.png" width="35" height="35" alt=""><span>haptic<span class="brand-mid">cursor</span><small>MACOS HAPTICS</small></span></a><p>Make macOS feel a little more tactile.</p></div><div class="footer-right"><span>Open source · MIT License</span><span>Not affiliated with Apple. Native app retains its existing macOS identity.</span><a href="#top">Back to top ↑</a></div></div></footer>
+</body>
+</html>

@@ -1,0 +1,11 @@
+.DS_Store
+*.swp
+*.tmp
+.build/
+DerivedData/
+*.xcuserstate
+*.xcworkspace/xcuserdata/
+**/.DS_Store
+*.app/
+*.dSYM/
+AppIcon.icns
